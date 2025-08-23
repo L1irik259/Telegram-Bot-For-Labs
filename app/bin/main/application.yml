@@ -1,0 +1,17 @@
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/botdb
+    driver-class-name: org.postgresql.Driver
+    username: user
+    password: test1234
+  h2:
+    console:
+      enabled: true
+  jpa:
+    hibernate:
+      ddl-auto: create-drop
+
+telegram:
+  bot:
+    username: ready_labss_bot
+    token: 8241364048:AAEvqHrBmYUv31c7dXNWVA676Z-Pupcy-6Q
