@@ -9,6 +9,9 @@
 plugins {
     // Apply the application plugin to add support for building a CLI application in Java.
     application
+    // Apply the Spring Boot plugin
+    id("org.springframework.boot") version "3.1.5"
+    id("io.spring.dependency-management") version "1.1.3"
 }
 
 repositories {
@@ -27,24 +30,21 @@ dependencies {
     // runtimeOnly("com.h2database:h2")
 
     // Spring Boot
-    implementation("org.springframework.boot:spring-boot-starter:3.1.5")
-    implementation("org.springframework.boot:spring-boot-starter-web:3.1.5")
-    implementation("org.springframework.boot:spring-boot-starter-data-jpa:3.1.5")
-    implementation("org.springframework.boot:spring-boot-starter-data-jpa:3.1.5")
+    implementation("org.springframework.boot:spring-boot-starter")
+    implementation("org.springframework.boot:spring-boot-starter-web")
+    implementation("org.springframework.boot:spring-boot-starter-data-jpa")
 
 
     // Telegram Bot
     implementation("org.telegram:telegrambots-spring-boot-starter:6.8.0")
 
-    // PostgreSQL и Hibernate
-    implementation("org.postgresql:postgresql:42.7.5")
-    implementation("jakarta.persistence:jakarta.persistence-api:3.1.0")
-    implementation("jakarta.transaction:jakarta.transaction-api:2.0.1")
-    implementation("org.hibernate.orm:hibernate-core:6.2.0.Final")
+    // PostgreSQL (Spring Boot управляет версией)
+    runtimeOnly("org.postgresql:postgresql")
 
-    // Логирование
-    implementation("org.slf4j:slf4j-api:2.0.7")
-    implementation("ch.qos.logback:logback-classic:1.4.7")
+    // Work with Yandex API
+    implementation("com.yandex.android:disk-restapi-sdk:1.0")
+
+    // Логирование уже включено в spring-boot-starter
 
     // Прочее
     implementation("com.google.guava:guava:32.1.2-jre")

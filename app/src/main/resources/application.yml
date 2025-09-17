@@ -4,14 +4,17 @@ spring:
     driver-class-name: org.postgresql.Driver
     username: user
     password: test1234
-  h2:
-    console:
-      enabled: true
   jpa:
     hibernate:
       ddl-auto: create-drop
+    show-sql: true
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
 
 telegram:
   bot:
     username: ready_labss_bot
     token: 8241364048:AAEvqHrBmYUv31c7dXNWVA676Z-Pupcy-6Q
+  chat:
+    token: -4824743379
